@@ -303,6 +303,7 @@ class DartClassGenerator {
       usePartOf: globals.export && globals.usePartOf!,
       exportFileName: Formatter.formatFileName(globals.exportFileName),
       valuesList: valuesList,
+      assetsPath: group.paths?.join(', ') ?? '',
     );
     logger?.verbose(
       'Writing class ${group.className} to file ${group.fileName}',

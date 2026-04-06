@@ -39,6 +39,8 @@ String formatExtension(String ext) => ext.startsWith('.') ? ext : '.$ext';
 /// in this file or not. It helps to unify imports for all the asset classes.
 /// [exportFileName] defines the dart compatible file name for this class.
 ///
+/// [assetsPath] defines the folder path(s) that assets are generated from.
+///
 /// Returns source code of a dart class file that contains all the references
 /// as constants.
 String getDartClass({
@@ -49,6 +51,7 @@ String getDartClass({
   String? exportFileName,
   required String? valuesList,
   required List<String>? ignoredRules,
+  String assetsPath = '',
 }) {
   var content = '';
   if (ignoredRules != null && ignoredRules.isNotEmpty) {
@@ -73,6 +76,12 @@ String getDartClass({
 
   content += classTemplate
       .replaceAll(Constants.KEY_CLASS_NAME, className)
+      .replaceAll(
+        Constants.KEY_ASSETS_PATH,
+        assetsPath.isNotEmpty
+            ? assetPathTemplate.replaceAll(Constants.KEY_ASSETS_PATH, assetsPath)
+            : '',
+      )
       .replaceAll(Constants.KEY_REFERENCES, references)
       .replaceAll(Constants.KEY_LIST_OF_ALL_REFERENCES, valuesList ?? '');
   return content;

@@ -36,6 +36,7 @@ class Constants {
   static const String KEY_REFERENCES = '[REFERENCES]';
   static const String KEY_LIST_OF_ALL_REFERENCES = '[LIST_OF_ALL_REFERENCES]';
   static const String KEY_ASSET_PATH = '[ASSET_PATH]';
+  static const String KEY_ASSETS_PATH = '[ASSETS_PATH]';
   static const String KEY_PROPERTIES = '[PROPERTIES]';
   static const String KEY_LIBRARY_NAME = '[LIBRARY_NAME]';
   static const String KEY_IMPORT_FILE_NAME = '[IMPORT_FILE_NAME]';
