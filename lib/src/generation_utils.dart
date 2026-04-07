@@ -79,7 +79,10 @@ String getDartClass({
       .replaceAll(
         Constants.KEY_ASSETS_PATH,
         assetsPath.isNotEmpty
-            ? assetPathTemplate.replaceAll(Constants.KEY_ASSETS_PATH, assetsPath)
+            ? assetPathTemplate.replaceAll(
+                Constants.KEY_ASSETS_PATH,
+                assetsPath,
+              )
             : '',
       )
       .replaceAll(Constants.KEY_REFERENCES, references)
